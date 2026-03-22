@@ -298,7 +298,7 @@ The front cover is generated entirely in LaTeX (no static band image). It follow
 
 ## Credits
 
-- Front/back cover layout based on the official IP Paris thesis cover template by Guillaume Brigot and Aurelien Arnoux (Ecole polytechnique)
+- Front/back cover layout based on the [official IP Paris thesis cover template](https://www.ip-paris.fr/education/doctorat/ecole-doctorale-ip-paris) by Guillaume Brigot and Aurelien Arnoux (Ecole polytechnique) ([LaTeX sources](https://www.ip-paris.fr/sites/default/files/documents-utiles/EDIPParis_modele_couverture_these.zip))
 - Typography and logo usage based on the [IP Paris 2025 graphic charter](https://www.ip-paris.fr/sites/default/files/Charte%20Graphique%202025/IP-PARIS_CHARTE-GRAPHIQUE_2025.pdf)
 - Complete template by Antoine Lavignotte (2026)
 
@@ -609,7 +609,7 @@ La 1ere de couverture est generee entierement en LaTeX (pas d'image statique pou
 
 ## Credits
 
-- Mise en page des couvertures basee sur le modele officiel IP Paris pour les couvertures de these par Guillaume Brigot et Aurelien Arnoux (Ecole polytechnique)
+- Mise en page des couvertures basee sur le [modele officiel IP Paris pour les couvertures de these](https://www.ip-paris.fr/education/doctorat/ecole-doctorale-ip-paris) par Guillaume Brigot et Aurelien Arnoux (Ecole polytechnique) ([sources LaTeX](https://www.ip-paris.fr/sites/default/files/documents-utiles/EDIPParis_modele_couverture_these.zip))
 - Typographie et usage du logo bases sur la [charte graphique IP Paris 2025](https://www.ip-paris.fr/sites/default/files/Charte%20Graphique%202025/IP-PARIS_CHARTE-GRAPHIQUE_2025.pdf)
 - Template complet par Antoine Lavignotte (2026)
 
