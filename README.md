@@ -280,7 +280,7 @@ Requirements for tests:
 - TeX Live 2022+ or MiKTeX
 - XeLaTeX (recommended, for Futura Book on the cover band) or pdflatex (falls back to TeX Gyre Heros)
 - biber (for bibliography)
-- Futura Book font (`futura-book.ttf`) -- [download here](https://www.freefontdownload.org/en/futura-book.font)
+- Futura font (included with macOS; Linux/Windows users must install separately)
 - Packages: all standard, included in TeX Live full
 
 ---
@@ -290,7 +290,7 @@ Requirements for tests:
 The front cover is generated entirely in LaTeX (no static band image). It follows the IP Paris 2025 graphic charter:
 
 - **Logo and institution name**: the IP Paris seal and "INSTITUT POLYTECHNIQUE DE PARIS" text are extracted directly from the official institutional logo files -- exact typography, exact proportions, no approximation
-- **Band text**: Futura Book for the document type ("These de doctorat" / "Habilitation a diriger des recherches"). The font must be installed separately -- download it from [freefontdownload.org](https://www.freefontdownload.org/en/futura-book.font) and place `futura-book.ttf` in `~/Library/Fonts/` (macOS) or your system fonts directory. With pdflatex, the template falls back to TeX Gyre Heros.
+- **Band text**: Futura for the document type ("These de doctorat" / "Habilitation a diriger des recherches"). Futura Medium is included with macOS. Linux/Windows users need to install Futura separately. With pdflatex, the template falls back to TeX Gyre Heros.
 - **Colors**: official IP Paris color palette (blue `#1B2A4A`, red `#C1272D`, orange `#E8601C`, gray `#6D6E71`)
 - **Document type**: the band text is generated dynamically based on the class options -- no need to swap image files
 
@@ -591,7 +591,7 @@ Prerequis pour les tests :
 - TeX Live 2022+ ou MiKTeX
 - XeLaTeX (recommande, pour Futura Book sur le bandeau de couverture) ou pdflatex (utilise TeX Gyre Heros en remplacement)
 - biber (pour la bibliographie)
-- Police Futura Book (`futura-book.ttf`) -- [telecharger ici](https://www.freefontdownload.org/en/futura-book.font)
+- Police Futura (incluse avec macOS ; les utilisateurs Linux/Windows doivent l'installer separement)
 - Packages : tous standards, inclus dans TeX Live full
 
 ---
@@ -601,7 +601,7 @@ Prerequis pour les tests :
 La 1ere de couverture est generee entierement en LaTeX (pas d'image statique pour le bandeau). Elle respecte la charte graphique IP Paris 2025 :
 
 - **Logo et nom de l'institution** : le sceau IP Paris et le texte "INSTITUT POLYTECHNIQUE DE PARIS" sont extraits directement des fichiers logo institutionnels -- typographie exacte, proportions exactes, aucune approximation
-- **Texte du bandeau** : Futura Book pour le type de document ("These de doctorat" / "Habilitation a diriger des recherches"). La police doit etre installee separement -- telechargez-la depuis [freefontdownload.org](https://www.freefontdownload.org/en/futura-book.font) et placez `futura-book.ttf` dans `~/Library/Fonts/` (macOS) ou votre repertoire de polices systeme. Avec pdflatex, le template utilise TeX Gyre Heros en remplacement.
+- **Texte du bandeau** : Futura pour le type de document ("These de doctorat" / "Habilitation a diriger des recherches"). Futura Medium est incluse avec macOS. Les utilisateurs Linux/Windows doivent installer Futura separement. Avec pdflatex, le template utilise TeX Gyre Heros en remplacement.
 - **Couleurs** : palette officielle IP Paris (bleu `#1B2A4A`, rouge `#C1272D`, orange `#E8601C`, gris `#6D6E71`)
 - **Type de document** : le texte du bandeau est genere dynamiquement selon les options de la classe -- pas besoin de changer d'image
 

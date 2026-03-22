@@ -47,10 +47,9 @@
   \RequirePackage{fontspec}
   \defaultfontfeatures{Ligatures=TeX}
   \RequirePackage{lmodern}
-  \newfontfamily\neuefrutiger{Neue Frutiger World}[
-    BoldFont={Neue Frutiger World Bold},
+  \newfontfamily\bandfont{Futura}[
+    BoldFont={Futura Medium},
   ]
-  \newfontfamily\bandfont[Path=/Users/antoine/Library/Fonts/]{futura-book.ttf}
   \newfontfamily\distinctlight{Distinct Style Sans Light}
   \newfontfamily\distinctbold{Distinct Style Sans Bold}
 \fi
