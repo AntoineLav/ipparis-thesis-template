@@ -1,4 +1,4 @@
-# ipparis-thesis v0.1
+# ipparis-thesis v0.2
 
 **LaTeX template for thesis and HDR manuscripts at Institut Polytechnique de Paris.**
 
@@ -309,7 +309,7 @@ CC BY 4.0
 ---
 ---
 
-# ipparis-thesis v0.1 (Francais)
+# ipparis-thesis v0.2 (Francais)
 
 **Template LaTeX pour les manuscrits de these et d'HDR a l'Institut Polytechnique de Paris.**
 
