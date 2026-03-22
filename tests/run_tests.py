@@ -325,7 +325,7 @@ def build_test_cases() -> list[TestCase]:
         name="cotutelle_compiles",
         options="phd,french,cotutelle",
         school="TSP",
-        extra_preamble=r"\cotutlogo{blank}",
+        extra_preamble=r"\cotutlogo{ENSTA}",
         expect_in_pdf=["Test Author"],
     ))
 

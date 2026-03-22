@@ -47,11 +47,7 @@
   \RequirePackage{fontspec}
   \defaultfontfeatures{Ligatures=TeX}
   \RequirePackage{lmodern}
-  \newfontfamily\bandfont{Futura}[
-    BoldFont={Futura Medium},
-  ]
-  \newfontfamily\distinctlight{Distinct Style Sans Light}
-  \newfontfamily\distinctbold{Distinct Style Sans Bold}
+  \newfontfamily\bandfont{Futura-Medium}
 \fi
 \RequirePackage{microtype}
 
