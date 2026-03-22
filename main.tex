@@ -1,0 +1,189 @@
+%%
+%% main.tex — Example manuscript using ipparis-thesis class
+%%
+%% This file demonstrates the template capabilities.
+%% Copy it and adapt it to your own thesis or HDR.
+%%
+%% Compile with: latexmk main.tex
+%%           or: xelatex main && biber main && xelatex main && xelatex main
+%%
+
+\documentclass[phd,french,binding]{ipparis-thesis}
+% Options: hdr | phd, french | english (default), cotutelle, binding
+
+%% ── Metadata ─────────────────────────────────────────────────────
+
+\author{Antoine Lavignotte}
+
+\titlefr{Titre du manuscrit en fran\c{c}ais}
+\titleen{Manuscript Title in English}
+
+\doctoralschool{626}{Institut Polytechnique de Paris}{EDIPP}
+\specialty{Computer Science, Data, AI}
+
+\school{TSP}    % TSP, TP, X, ENSTA, ENSAE, PONTS
+\lab{SAMOVAR}
+
+\defensedate{\ifthesisfrench{1\textsuperscript{er} janvier 2026}{January 1, 2026}}
+\defenseplace{Palaiseau}
+
+\nnt{2026IPPAXXXX}
+
+%% ── Jury ─────────────────────────────────────────────────────────
+
+\ifthesisfrench{%
+  \jurymember{Pr\'enom Nom}{Professeur, Universit\'e}{Rapporteur}
+  \jurymember{Pr\'enom Nom}{Professeur, Universit\'e}{Rapporteur}
+  \jurymember{Pr\'enom Nom}{Professeur, Universit\'e}{Rapporteur}
+  \jurymember{Pr\'enom Nom}{Professeur, Universit\'e}{Examinateur}
+  \jurymember{Pr\'enom Nom}{Professeur, Universit\'e}{Examinateur}
+  \jurymember{Pr\'enom Nom}{Professeur, Universit\'e}{Pr\'esident}
+}{%
+  \jurymember{First Last}{Professor, University}{Reviewer}
+  \jurymember{First Last}{Professor, University}{Reviewer}
+  \jurymember{First Last}{Professor, University}{Reviewer}
+  \jurymember{First Last}{Professor, University}{Examiner}
+  \jurymember{First Last}{Professor, University}{Examiner}
+  \jurymember{First Last}{Professor, University}{Chair}
+}
+
+%% ── Abstracts ────────────────────────────────────────────────────
+
+\keywordsfr{mot-cl\'e 1, mot-cl\'e 2, mot-cl\'e 3}
+\keywordsen{keyword 1, keyword 2, keyword 3}
+
+\abstractfr{%
+R\'esum\'e en fran\c{c}ais. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+}
+
+\abstracten{%
+Abstract in English. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+}
+
+%% ── Bibliography ─────────────────────────────────────────────────
+
+\addbibresource{bibliography.bib}
+
+%% ── Glossary / Acronyms ─────────────────────────────────────────
+
+\makeglossaries
+
+\newacronym{ml}{ML}{Machine Learning}
+\newacronym{rl}{RL}{Reinforcement Learning}
+
+%% ═════════════════════════════════════════════════════════════════
+\begin{document}
+%% ═════════════════════════════════════════════════════════════════
+
+%% ── Covers and front matter ──────────────────────────────────────
+
+\frontmatter
+
+% Official IP Paris front cover
+\makefrontcover
+
+% Dedication (optional)
+\begin{dedication}
+  \ifthesisfrench{\`A ceux qui liront ce document.}{To those who will read this document.}
+\end{dedication}
+
+% Acknowledgements
+\begin{acknowledgements}
+  \ifthesisfrench{Les remerciements vont ici.}{Acknowledgements go here.}
+\end{acknowledgements}
+
+% Table of contents
+\tableofcontents
+
+% Acronyms
+\printglossary[type=\acronymtype,title=\ifthesisfrench{Acronymes}{Acronyms}]
+
+%% ── Foreword ─────────────────────────────────────────────────────
+
+\begin{foreword}
+  \ifthesisfrench{%
+    Ce document est un exemple du template \texttt{ipparis-thesis} pour la r\'edaction de manuscrits de th\`ese et d'HDR \`a l'Institut Polytechnique de Paris.
+
+    Il illustre les fonctionnalit\'es disponibles~: couvertures officielles, environnements (d\'edicace, remerciements, avant-propos), chapitres, annexes et quatri\`eme de couverture.
+  }{%
+    This document is an example of the \texttt{ipparis-thesis} template for writing thesis and HDR manuscripts at Institut Polytechnique de Paris.
+
+    It demonstrates the available features: official covers, environments (dedication, acknowledgements, foreword), chapters, appendices, and back cover.
+  }
+\end{foreword}
+
+%% ── Main matter ──────────────────────────────────────────────────
+
+\mainmatter
+
+\chapter{\ifthesisfrench{Chapitre d'exemple}{Example chapter}}
+\label{ch:example}
+
+\ifthesisfrench{%
+  Ceci est un chapitre d'exemple illustrant le template. Toutes les fonctionnalit\'es standard de \LaTeX{} sont utilisables~: \'equations, figures, tableaux, citations, r\'ef\'erences crois\'ees, etc.
+}{%
+  This is an example chapter demonstrating the template. You can use all standard \LaTeX{} features: equations, figures, tables, citations, cross-references, etc.
+}
+
+\section{\ifthesisfrench{\'Equations}{Equations}}
+
+\ifthesisfrench{Un exemple d'\'equation~:}{An example equation:}
+\begin{equation}
+  E = mc^2
+  \label{eq:einstein}
+\end{equation}
+
+\section{Citations}
+
+\ifthesisfrench{%
+  Citation d'une r\'ef\'erence~: voir~\cite{murphy2023survey} pour plus de d\'etails.
+}{%
+  Citing a reference: see~\cite{murphy2023survey} for details.
+}
+
+\section{\ifthesisfrench{Acronymes}{Acronyms}}
+
+\ifthesisfrench{%
+  Premi\`ere utilisation de \gls{ml} et \gls{rl}. Deuxi\`eme utilisation~: \gls{ml}.
+}{%
+  First use of \gls{ml} and \gls{rl}. Second use: \gls{ml}.
+}
+
+\chapter{\ifthesisfrench{Un autre chapitre}{Another chapter}}
+\label{ch:another}
+
+\ifthesisfrench{%
+  Un autre chapitre pour illustrer la table des mati\`eres et les en-t\^etes de page.
+}{%
+  Another chapter to show the table of contents and page headers.
+}
+
+\section{\ifthesisfrench{Une section}{A section}}
+
+\ifthesisfrench{Du contenu ici.}{Some content here.}
+
+\subsection{\ifthesisfrench{Une sous-section}{A subsection}}
+
+\ifthesisfrench{Encore du contenu.}{More content.}
+
+%% ── Back matter ──────────────────────────────────────────────────
+
+\backmatter
+
+% Bibliography
+\printbibliography[heading=bibintoc]
+
+%% ── Appendices ───────────────────────────────────────────────────
+
+\appendix
+
+\chapter{\ifthesisfrench{Annexe d'exemple}{Example appendix}}
+\label{app:example}
+
+\ifthesisfrench{Le mat\'eriel compl\'ementaire va ici.}{Additional material goes here.}
+
+%% ── Back cover ───────────────────────────────────────────────────
+
+\makebackcover
+
+\end{document}
