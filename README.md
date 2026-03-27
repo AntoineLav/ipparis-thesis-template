@@ -1,8 +1,8 @@
-# ipparis-thesis v0.2
+# ipparis-thesis v0.3
 
 **LaTeX template for thesis and HDR manuscripts at Institut Polytechnique de Paris.**
 
-A document class that handles official IP Paris covers, French/English switching, and per-school logo selection so you can get on with writing. The covers follow the [IP Paris 2025 graphic charter](https://www.ip-paris.fr/sites/default/files/Charte%20Graphique%202025/IP-PARIS_CHARTE-GRAPHIQUE_2025.pdf) -- official logos, Futura Book typeface on the band, correct color palette.
+A document class that handles official IP Paris covers, French/English switching, and per-school logo selection so you can get on with writing. The covers follow the [IP Paris 2025 graphic charter](https://www.ip-paris.fr/sites/default/files/Charte%20Graphique%202025/IP-PARIS_CHARTE-GRAPHIQUE_2025.pdf) -- Futura Book typeface on the band, correct color palette. **Logo files are not included** due to trademark restrictions -- see [Logo setup](#logo-setup) below.
 
 ## About this project
 
@@ -329,11 +329,11 @@ CC BY 4.0
 ---
 ---
 
-# ipparis-thesis v0.2 (Francais)
+# ipparis-thesis v0.3 (Francais)
 
 **Template LaTeX pour les manuscrits de these et d'HDR a l'Institut Polytechnique de Paris.**
 
-Une classe de document qui gere les couvertures officielles IP Paris, le basculement francais/anglais et la selection du logo par ecole, pour que vous puissiez vous concentrer sur la redaction. Les couvertures respectent la [charte graphique IP Paris 2025](https://www.ip-paris.fr/sites/default/files/Charte%20Graphique%202025/IP-PARIS_CHARTE-GRAPHIQUE_2025.pdf) -- logos officiels, police Futura Book sur le bandeau, palette de couleurs conforme.
+Une classe de document qui gere les couvertures officielles IP Paris, le basculement francais/anglais et la selection du logo par ecole, pour que vous puissiez vous concentrer sur la redaction. Les couvertures respectent la [charte graphique IP Paris 2025](https://www.ip-paris.fr/sites/default/files/Charte%20Graphique%202025/IP-PARIS_CHARTE-GRAPHIQUE_2025.pdf) -- police Futura Book sur le bandeau, palette de couleurs conforme. **Les fichiers de logos ne sont pas inclus** pour des raisons de droit des marques -- voir [Installation des logos](#installation-des-logos) ci-dessous.
 
 ## A propos de ce projet
 
