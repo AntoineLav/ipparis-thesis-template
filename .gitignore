@@ -32,6 +32,9 @@ main.pdf
 media/*.png
 media/**/*.png
 
+# Reference materials (not distributed)
+reference/
+
 # OS files
 .DS_Store
 Thumbs.db
