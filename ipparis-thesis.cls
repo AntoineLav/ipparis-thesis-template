@@ -461,7 +461,7 @@
 
     \vspace{0.5cm}
 
-    \if@french Discipline\else Discipline\fi : \@specialty
+    \if@french Discipline\else Specialty\fi : \@specialty
 
     \vspace{1.5cm}
     \if@french présentée par\else presented by\fi\\[0.5cm]
