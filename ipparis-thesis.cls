@@ -120,6 +120,26 @@
 \RequirePackage{algpseudocode}
 \RequirePackage{listings}
 
+%% ── Logo file checks ───────────────────────────────────────────
+%% Logos are not distributed with this template (trademark restrictions).
+%% See README.md for download instructions.
+
+\newcommand{\@checklogofile}[2]{%
+  \IfFileExists{#1}{}{%
+    \ClassError{ipparis-thesis}{%
+      Missing logo file: #1\MessageBreak
+      #2\MessageBreak
+      See README.md for download instructions%
+    }{%
+      Logo files are not distributed with this template due to
+      trademark restrictions.\MessageBreak
+      Download them from the official sources listed in README.md
+      and place them\MessageBreak in the media/ directory.%
+    }%
+  }%
+}
+
+
 % Glossary / acronyms
 \RequirePackage[acronym,toc]{glossaries}
 
@@ -595,6 +615,11 @@
     },
   }
   \pagestyle{main}
+  % Check that required logo files are present
+  \@checklogofile{media/IPPARIS-petit-blanc.png}{Required for front cover band}%
+  \@checklogofile{media/IPPARIS-texte-blanc.png}{Required for front cover band}%
+  \@checklogofile{media/IPPARIS-petit.png}{Required for page footer and back cover}%
+  \@checklogofile{media/etab/\@instlogo.png}{Required for front cover and inner title}%
 }
 
 \RequirePackage{multicol}

@@ -215,6 +215,30 @@ The partner institution logo appears on the left, the IP Paris school logo on th
 
 ---
 
+## Logo setup
+
+**Logo files are not distributed with this template** due to trademark restrictions. You must download them yourself from the official sources and place them in the `media/` directory.
+
+The template will display a clear error message at compilation if any required logo is missing.
+
+### Required files
+
+| File | Description | Source |
+|------|-------------|--------|
+| `media/IPPARIS-petit.png` | IP Paris seal (black) | [IP Paris graphic charter](https://www.ip-paris.fr/sites/default/files/Charte%20Graphique%202025/IP-PARIS_CHARTE-GRAPHIQUE_2025.pdf) |
+| `media/IPPARIS-petit-blanc.png` | IP Paris seal (white, for front cover band) | Same source |
+| `media/IPPARIS-texte-blanc.png` | "INSTITUT POLYTECHNIQUE DE PARIS" text (white) | Same source |
+| `media/etab/<SCHOOL>.png` | Your school logo (TSP, TP, X, ENSTA, ENSAE, or PONTS) | [Official cover template](https://www.ip-paris.fr/sites/default/files/documents-utiles/EDIPParis_modele_couverture_these.zip) or your school's communication department |
+| `media/ed/edipp.png` | Doctoral school logo (for back cover) | Same cover template ZIP |
+
+### Step by step
+
+1. Download the [official IP Paris cover template ZIP](https://www.ip-paris.fr/sites/default/files/documents-utiles/EDIPParis_modele_couverture_these.zip)
+2. Extract the logo files and place them in the corresponding `media/` subdirectories
+3. For IP Paris logos not included in the ZIP, refer to the [IP Paris 2025 graphic charter](https://www.ip-paris.fr/sites/default/files/Charte%20Graphique%202025/IP-PARIS_CHARTE-GRAPHIQUE_2025.pdf) or contact your school's communication department
+
+---
+
 ## Project structure
 
 ```
@@ -228,16 +252,12 @@ ipparis-thesis/
 ├── figures/                # Your figures
 ├── tests/                  # Test suite
 │   └── run_tests.py        # Automated tests (28 cases)
-└── media/                  # Logos (do not modify)
+└── media/                  # Logos (download separately, see above)
     ├── IPPARIS-petit.png       # IP Paris seal (black, for back cover)
     ├── IPPARIS-petit-blanc.png # IP Paris seal (white, for front cover band)
     ├── IPPARIS-texte-blanc.png # "INSTITUT POLYTECHNIQUE DE PARIS" (white, centered)
     ├── etab/               # School logos
-    │   ├── TSP.png         # Telecom SudParis
-    │   ├── TP.png          # Telecom Paris
-    │   ├── X.png           # Ecole polytechnique
-    │   ├── ENSTA.png       # ENSTA Paris
-    │   └── ENSAE.png       # ENSAE Paris
+    │   └── <SCHOOL>.png    # Your school (TSP, TP, X, ENSTA, ENSAE, or PONTS)
     └── ed/                 # Doctoral school logo
         └── edipp.png       # IP Paris "Doctoral School" logo (back cover)
 ```
@@ -526,6 +546,30 @@ Le logo du partenaire apparait a gauche, le logo de l'ecole IP Paris a droite.
 
 ---
 
+## Installation des logos
+
+**Les fichiers de logos ne sont pas distribues avec ce template** pour des raisons de droit des marques. Vous devez les telecharger vous-meme depuis les sources officielles et les placer dans le dossier `media/`.
+
+Le template affichera un message d'erreur clair a la compilation si un logo requis est manquant.
+
+### Fichiers requis
+
+| Fichier | Description | Source |
+|---------|-------------|--------|
+| `media/IPPARIS-petit.png` | Sceau IP Paris (noir) | [Charte graphique IP Paris](https://www.ip-paris.fr/sites/default/files/Charte%20Graphique%202025/IP-PARIS_CHARTE-GRAPHIQUE_2025.pdf) |
+| `media/IPPARIS-petit-blanc.png` | Sceau IP Paris (blanc, pour le bandeau) | Meme source |
+| `media/IPPARIS-texte-blanc.png` | Texte "INSTITUT POLYTECHNIQUE DE PARIS" (blanc) | Meme source |
+| `media/etab/<ECOLE>.png` | Logo de votre ecole (TSP, TP, X, ENSTA, ENSAE ou PONTS) | [Modele officiel de couverture](https://www.ip-paris.fr/sites/default/files/documents-utiles/EDIPParis_modele_couverture_these.zip) ou service communication de votre ecole |
+| `media/ed/edipp.png` | Logo ecole doctorale (4eme de couverture) | Meme ZIP du modele de couverture |
+
+### Etape par etape
+
+1. Telecharger le [ZIP du modele officiel de couverture IP Paris](https://www.ip-paris.fr/sites/default/files/documents-utiles/EDIPParis_modele_couverture_these.zip)
+2. Extraire les fichiers de logos et les placer dans les sous-dossiers correspondants de `media/`
+3. Pour les logos IP Paris non inclus dans le ZIP, se referer a la [charte graphique IP Paris 2025](https://www.ip-paris.fr/sites/default/files/Charte%20Graphique%202025/IP-PARIS_CHARTE-GRAPHIQUE_2025.pdf) ou contacter le service communication de votre ecole
+
+---
+
 ## Structure du projet
 
 ```
@@ -539,16 +583,12 @@ ipparis-thesis/
 ├── figures/                # Vos figures
 ├── tests/                  # Suite de tests
 │   └── run_tests.py        # Tests automatises (28 cas)
-└── media/                      # Logos (ne pas modifier)
+└── media/                      # Logos (a telecharger, voir ci-dessus)
     ├── IPPARIS-petit.png       # Sceau IP Paris (noir, pour 4eme de couverture)
     ├── IPPARIS-petit-blanc.png # Sceau IP Paris (blanc, pour bandeau 1ere de couverture)
     ├── IPPARIS-texte-blanc.png # "INSTITUT POLYTECHNIQUE DE PARIS" (blanc, centre)
     ├── etab/               # Logos des ecoles
-    │   ├── TSP.png         # Telecom SudParis
-    │   ├── TP.png          # Telecom Paris
-    │   ├── X.png           # Ecole polytechnique
-    │   ├── ENSTA.png       # ENSTA Paris
-    │   └── ENSAE.png       # ENSAE Paris
+    │   └── <ECOLE>.png     # Votre ecole (TSP, TP, X, ENSTA, ENSAE ou PONTS)
     └── ed/                 # Logo ecole doctorale
         └── edipp.png       # Logo "Doctoral School" IP Paris (4eme de couverture)
 ```

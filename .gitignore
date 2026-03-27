@@ -28,6 +28,10 @@
 # PDF output (users compile their own)
 main.pdf
 
+# Logo files (not distributed, download separately — see README.md)
+media/*.png
+media/**/*.png
+
 # OS files
 .DS_Store
 Thumbs.db

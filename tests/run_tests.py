@@ -18,10 +18,12 @@ Usage:
 """
 
 import os
+import struct
 import subprocess
 import shutil
 import sys
 import tempfile
+import zlib
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -33,6 +35,27 @@ MEDIA_DIR = PROJ_DIR / "media"
 
 SCHOOLS = ["TSP", "TP", "X", "ENSTA", "ENSAE"]
 # PONTS excluded: no logo file yet
+
+
+def make_placeholder_png(path: Path, width=100, height=40):
+    """Create a minimal valid 1-color PNG (white) for test compilation."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+
+    def _chunk(chunk_type, data):
+        c = chunk_type + data
+        return struct.pack(">I", len(data)) + c + struct.pack(">I", zlib.crc32(c) & 0xFFFFFFFF)
+
+    ihdr_data = struct.pack(">IIBBBBB", width, height, 8, 2, 0, 0, 0)
+    raw = b""
+    for _ in range(height):
+        raw += b"\x00" + b"\xff" * (width * 3)
+    idat_data = zlib.compress(raw)
+
+    png = b"\x89PNG\r\n\x1a\n"
+    png += _chunk(b"IHDR", ihdr_data)
+    png += _chunk(b"IDAT", idat_data)
+    png += _chunk(b"IEND", b"")
+    path.write_bytes(png)
 
 SCHOOL_NAMES = {
     "TSP": "Télécom SudParis",
@@ -145,9 +168,13 @@ def run_test(tc: TestCase, verbose: bool = False) -> TestResult:
     with tempfile.TemporaryDirectory(prefix="ipparis_test_") as tmpdir:
         tmpdir = Path(tmpdir)
 
-        # Copy class file and media
+        # Copy class file and generate placeholder logos for tests
         shutil.copy2(CLS_FILE, tmpdir / "ipparis-thesis.cls")
-        shutil.copytree(MEDIA_DIR, tmpdir / "media")
+        for name in ["IPPARIS-petit.png", "IPPARIS-petit-blanc.png", "IPPARIS-texte-blanc.png"]:
+            make_placeholder_png(tmpdir / "media" / name)
+        for school in SCHOOLS:
+            make_placeholder_png(tmpdir / "media" / "etab" / f"{school}.png")
+        make_placeholder_png(tmpdir / "media" / "ed" / "edipp.png")
 
         # Write test .tex
         tex_path = tmpdir / "test.tex"
