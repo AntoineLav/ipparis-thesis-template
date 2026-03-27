@@ -1,0 +1,32 @@
+\chapter{\ifthesisfrench{Chapitre d'exemple}{Example chapter}}
+\label{ch:example}
+
+\ifthesisfrench{%
+  Ceci est un chapitre d'exemple illustrant le template. Toutes les fonctionnalit\'es standard de \LaTeX{} sont utilisables~: \'equations, figures, tableaux, citations, r\'ef\'erences crois\'ees, etc.
+}{%
+  This is an example chapter demonstrating the template. You can use all standard \LaTeX{} features: equations, figures, tables, citations, cross-references, etc.
+}
+
+\section{\ifthesisfrench{\'Equations}{Equations}}
+
+\ifthesisfrench{Un exemple d'\'equation~:}{An example equation:}
+\begin{equation}
+  E = mc^2
+  \label{eq:einstein}
+\end{equation}
+
+\section{Citations}
+
+\ifthesisfrench{%
+  Citation d'une r\'ef\'erence~: voir~\cite{murphy2023survey} pour plus de d\'etails.
+}{%
+  Citing a reference: see~\cite{murphy2023survey} for details.
+}
+
+\section{\ifthesisfrench{Acronymes}{Acronyms}}
+
+\ifthesisfrench{%
+  Premi\`ere utilisation de \gls{ml} et \gls{rl}. Deuxi\`eme utilisation~: \gls{ml}.
+}{%
+  First use of \gls{ml} and \gls{rl}. Second use: \gls{ml}.
+}
