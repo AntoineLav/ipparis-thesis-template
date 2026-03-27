@@ -1,4 +1,4 @@
-# ipparis-thesis v0.3
+# ipparis-thesis v0.4
 
 **LaTeX template for thesis and HDR manuscripts at Institut Polytechnique de Paris.**
 
@@ -247,6 +247,7 @@ ipparis-thesis/
 ├── main.tex                # Main document
 ├── bibliography.bib        # Bibliography
 ├── .latexmkrc              # latexmk configuration
+├── front/                  # Front matter (dedication, acknowledgements, foreword)
 ├── chapters/               # Chapter files
 ├── appendices/             # Appendix files
 ├── figures/                # Your figures
@@ -329,7 +330,7 @@ CC BY 4.0
 ---
 ---
 
-# ipparis-thesis v0.3 (Francais)
+# ipparis-thesis v0.4 (Francais)
 
 **Template LaTeX pour les manuscrits de these et d'HDR a l'Institut Polytechnique de Paris.**
 
@@ -578,6 +579,7 @@ ipparis-thesis/
 ├── main.tex                # Document principal
 ├── bibliography.bib        # Bibliographie
 ├── .latexmkrc              # Configuration latexmk
+├── front/                  # Front matter (dedicace, remerciements, avant-propos)
 ├── chapters/               # Fichiers de chapitres
 ├── appendices/             # Fichiers d'annexes
 ├── figures/                # Vos figures

@@ -13,7 +13,7 @@
 %%
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{ipparis-thesis}[2026/03/27 v0.3 IP Paris Thesis/HDR Template]
+\ProvidesClass{ipparis-thesis}[2026/03/27 v0.4 IP Paris Thesis/HDR Template]
 
 %% ── Options ──────────────────────────────────────────────────────
 
