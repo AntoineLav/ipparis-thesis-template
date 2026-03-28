@@ -384,8 +384,9 @@ The front cover is generated entirely in LaTeX (no static band image). It follow
 
 ## Credits
 
-- Front/back cover layout based on the [official IP Paris thesis cover template](https://www.ip-paris.fr/education/doctorat/ecole-doctorale-ip-paris) by Guillaume Brigot and Aurelien Arnoux (Ecole polytechnique) ([LaTeX sources](https://www.ip-paris.fr/sites/default/files/documents-utiles/EDIPParis_modele_couverture_these.zip))
+- Front/back cover layout based on the [official IP Paris thesis cover template](https://www.ip-paris.fr/education/doctorat/ecole-doctorale-ip-paris) by Guillaume Brigot and Aurélien Arnoux (École polytechnique) ([LaTeX sources](https://www.ip-paris.fr/sites/default/files/documents-utiles/EDIPParis_modele_couverture_these.zip))
 - Typography and logo usage based on the [IP Paris 2025 graphic charter](https://www.ip-paris.fr/sites/default/files/Charte%20Graphique%202025/IP-PARIS_CHARTE-GRAPHIQUE_2025.pdf)
+- Thanks to [Cédric Ware](https://perso.telecom-paristech.fr/ware/index.html.fr) (Télécom Paris) for his feedback on the early versions of this template. His comments helped shape the package options system and the customizable cover pages.
 - Complete template by Antoine Lavignotte (2026)
 
 ## License
@@ -395,36 +396,36 @@ CC BY 4.0
 ---
 ---
 
-# ipparis-thesis v0.6 (Francais)
+# ipparis-thesis v0.6 (Français)
 
-**Template LaTeX pour les manuscrits de these et d'HDR a l'Institut Polytechnique de Paris.**
+**Template LaTeX pour les manuscrits de thèse et d'HDR à l'Institut Polytechnique de Paris.**
 
-Une classe de document qui gere les couvertures officielles IP Paris, le basculement francais/anglais et la selection du logo par ecole, pour que vous puissiez vous concentrer sur la redaction. Les couvertures respectent la [charte graphique IP Paris 2025](https://www.ip-paris.fr/sites/default/files/Charte%20Graphique%202025/IP-PARIS_CHARTE-GRAPHIQUE_2025.pdf) -- police Futura Book sur le bandeau, palette de couleurs conforme. **Les fichiers de logos ne sont pas inclus** pour des raisons de droit des marques -- voir [Installation des logos](#installation-des-logos) ci-dessous.
+Une classe de document qui gère les couvertures officielles IP Paris, le basculement français/anglais et la sélection du logo par école, pour que vous puissiez vous concentrer sur la rédaction. Les couvertures respectent la [charte graphique IP Paris 2025](https://www.ip-paris.fr/sites/default/files/Charte%20Graphique%202025/IP-PARIS_CHARTE-GRAPHIQUE_2025.pdf) -- police Futura Book sur le bandeau, palette de couleurs conforme. **Les fichiers de logos ne sont pas inclus** pour des raisons de droit des marques -- voir [Installation des logos](#installation-des-logos) ci-dessous.
 
-## A propos de ce projet
+## À propos de ce projet
 
-Ce template est ne pendant la preparation de mon HDR. Je cherchais un template LaTeX pour le manuscrit et il n'y en avait pas -- IP Paris ne fournit que des fichiers Word/LaTeX pour les couvertures, rien pour le contenu.
+Ce template est né pendant la préparation de mon HDR. Je cherchais un template LaTeX pour le manuscrit et il n'y en avait pas -- IP Paris ne fournit que des fichiers Word/LaTeX pour les couvertures, rien pour le contenu.
 
-Apres avoir vu plusieurs doctorants perdre du temps sur la mise en forme dans la derniere ligne droite de leur these, je voulais que ca n'arrive plus. Le principe est simple : on choisit son ecole, on remplit ses metadonnees, et on ecrit. Les couvertures, les logos et la langue se reglent tout seuls.
+Après avoir vu plusieurs doctorants perdre du temps sur la mise en forme dans la dernière ligne droite de leur thèse, je voulais que ça n'arrive plus. Le principe est simple : on choisit son école, on remplit ses métadonnées, et on écrit. Les couvertures, les logos et la langue se règlent tout seuls.
 
-Les six ecoles d'IP Paris partagent le meme format de couverture, donc ca marche que vous soyez a Polytechnique, Telecom Paris, l'ENSTA, l'ENSAE, Telecom SudParis ou aux Ponts.
+Les six écoles d'IP Paris partagent le même format de couverture, donc ça marche que vous soyez à Polytechnique, Télécom Paris, l'ENSTA, l'ENSAE, Télécom SudParis ou aux Ponts.
 
-**Ce n'est pas un template officiel d'IP Paris.** C'est un projet personnel, fait pour mes doctorants. Cela dit, si ca peut servir a d'autres, tant mieux -- c'est open source et toute contribution est bienvenue.
+**Ce n'est pas un template officiel d'IP Paris.** C'est un projet personnel, fait pour mes doctorants. Cela dit, si ça peut servir à d'autres, tant mieux -- c'est open source et toute contribution est bienvenue.
 
-Petit avertissement : mon poste actuel ne me laisse pas beaucoup de temps pour la maintenance. J'essaierai de repondre aux issues quand je peux, mais inutile de me mettre la pression. Une pull request sera toujours plus efficace qu'un bug report.
+Petit avertissement : mon poste actuel ne me laisse pas beaucoup de temps pour la maintenance. J'essaierai de répondre aux issues quand je peux, mais inutile de me mettre la pression. Une pull request sera toujours plus efficace qu'un bug report.
 
 -- Antoine Lavignotte, 2026
 
 ---
 
-## Demarrage rapide
+## Démarrage rapide
 
 ```latex
-\documentclass[phd]{ipparis-thesis}        % These de doctorat (anglais)
-\documentclass[hdr,french]{ipparis-thesis}  % HDR (francais)
+\documentclass[phd]{ipparis-thesis}        % Thèse de doctorat (anglais)
+\documentclass[hdr,french]{ipparis-thesis}  % HDR (français)
 ```
 
-Compilation avec XeLaTeX (recommande, pour Futura Book sur le bandeau) :
+Compilation avec XeLaTeX (recommandé, pour Futura Book sur le bandeau) :
 
 ```bash
 latexmk main.tex
@@ -440,7 +441,7 @@ xelatex main
 xelatex main
 ```
 
-Le template compile aussi avec pdflatex, mais le bandeau utilisera TeX Gyre Heros au lieu de Futura Book, ce qui ne correspond pas aux specifications officielles de la couverture IP Paris. XeLaTeX est fortement recommande.
+Le template compile aussi avec pdflatex, mais le bandeau utilisera TeX Gyre Heros au lieu de Futura Book, ce qui ne correspond pas aux spécifications officielles de la couverture IP Paris. XeLaTeX est fortement recommandé.
 
 ---
 
@@ -448,18 +449,18 @@ Le template compile aussi avec pdflatex, mais le bandeau utilisera TeX Gyre Hero
 
 | Option | Description |
 |--------|-------------|
-| `phd` | These de doctorat (par defaut) |
-| `hdr` | Habilitation a diriger des recherches |
-| `english` | Document en anglais (par defaut) |
-| `french` | Document en francais |
-| `cotutelle` | Co-tutelle avec un etablissement partenaire |
+| `phd` | Thèse de doctorat (par défaut) |
+| `hdr` | Habilitation à diriger des recherches |
+| `english` | Document en anglais (par défaut) |
+| `french` | Document en français |
+| `cotutelle` | Co-tutelle avec un établissement partenaire |
 | `binding` | Ajoute 10mm de marge de reliure pour l'impression |
-| `bibstyle=...` | Style bibliographique (defaut : `ieee`) |
-| `bibsorting=...` | Tri bibliographique (defaut : `nyt`) |
-| `linkcolor=...` | Couleur des liens internes (defaut : `NavyBlue`) |
-| `citecolor=...` | Couleur des liens de citation (defaut : `ForestGreen`) |
-| `urlcolor=...` | Couleur des liens URL (defaut : `BrickRed`) |
-| `colorlinks=false` | Desactive les liens colores (utilise des cadres) |
+| `bibstyle=...` | Style bibliographique (défaut : `ieee`) |
+| `bibsorting=...` | Tri bibliographique (défaut : `nyt`) |
+| `linkcolor=...` | Couleur des liens internes (défaut : `NavyBlue`) |
+| `citecolor=...` | Couleur des liens de citation (défaut : `ForestGreen`) |
+| `urlcolor=...` | Couleur des liens URL (défaut : `BrickRed`) |
+| `colorlinks=false` | Désactive les liens colorés (utilise des cadres) |
 
 Les options se combinent : `\documentclass[hdr,french,bibstyle=authoryear,linkcolor=black]{ipparis-thesis}`
 
@@ -472,43 +473,43 @@ Pour les packages non couverts par les options ci-dessus (ex. xcolor, geometry),
 
 ---
 
-## Choix de l'ecole
+## Choix de l'école
 
-Utilisez la commande `\school` avec l'une des six cles :
+Utilisez la commande `\school` avec l'une des six clés :
 
 ```latex
-\school{TSP}     % Telecom SudParis
-\school{TP}      % Telecom Paris
-\school{X}       % Ecole polytechnique
+\school{TSP}     % Télécom SudParis
+\school{TP}      % Télécom Paris
+\school{X}       % École polytechnique
 \school{ENSTA}   % ENSTA Paris
 \school{ENSAE}   % ENSAE Paris
-\school{PONTS}   % Ecole des Ponts ParisTech
+\school{PONTS}   % École des Ponts ParisTech
 ```
 
 Cette commande configure automatiquement :
-- Le nom de l'etablissement sur toutes les couvertures et pages de titre
-- Le logo de l'ecole affiche a cote d'IP Paris
-- Le texte "preparee a..."
+- Le nom de l'établissement sur toutes les couvertures et pages de titre
+- Le logo de l'école affiché à côté d'IP Paris
+- Le texte "préparée à..."
 
-Pour forcer un nom d'etablissement specifique :
+Pour forcer un nom d'établissement spécifique :
 
 ```latex
 \school{X}
-\institution{l'Ecole polytechnique}  % surcharge optionnelle
+\institution{l'École polytechnique}  % surcharge optionnelle
 ```
 
 ---
 
-## Metadonnees
+## Métadonnées
 
 ```latex
-\author{Prenom Nom}
-\titlefr{Titre en francais}
+\author{Prénom Nom}
+\titlefr{Titre en français}
 \titleen{Title in English}
 \school{TSP}
 \lab{SAMOVAR}
 \doctoralschool{626}{Institut Polytechnique de Paris}{EDIPP}
-\specialty{Informatique, Donnees, IA}
+\specialty{Informatique, Données, IA}
 \defensedate{15 juin 2026}
 \defenseplace{Evry}
 \nnt{2026IPPAXXXX}
@@ -518,23 +519,23 @@ Pour forcer un nom d'etablissement specifique :
 
 ## Jury
 
-Les membres du jury sont ajoutes un par un. Ils apparaissent dans l'ordre sur les deux couvertures.
+Les membres du jury sont ajoutés un par un. Ils apparaissent dans l'ordre sur les deux couvertures.
 
 ```latex
-\jurymember{Prenom Nom}{Professeur, Universite}{Rapporteur}
-\jurymember{Prenom Nom}{Professeur, Universite}{Rapporteur}
-\jurymember{Prenom Nom}{Professeur, Universite}{Examinateur}
-\jurymember{Prenom Nom}{Professeur, Universite}{President}
+\jurymember{Prénom Nom}{Professeur, Université}{Rapporteur}
+\jurymember{Prénom Nom}{Professeur, Université}{Rapporteur}
+\jurymember{Prénom Nom}{Professeur, Université}{Examinateur}
+\jurymember{Prénom Nom}{Professeur, Université}{Président}
 ```
 
 ---
 
-## Resumes et mots-cles
+## Résumés et mots-clés
 
-Les deux langues sont requises (elles apparaissent en 4eme de couverture).
+Les deux langues sont requises (elles apparaissent en 4ème de couverture).
 
 ```latex
-\abstractfr{Resume en francais...}
+\abstractfr{Résumé en français...}
 \abstracten{Abstract in English...}
 \keywordsfr{mot1, mot2, mot3}
 \keywordsen{keyword1, keyword2, keyword3}
@@ -544,20 +545,20 @@ Les deux langues sont requises (elles apparaissent en 4eme de couverture).
 
 ## Structure du document
 
-Le template genere trois pages speciales automatiquement :
+Le template génère trois pages spéciales automatiquement :
 
-1. **`\makefrontcover`** — 1ere de couverture officielle IP Paris (bandeau noir avec logo et type de document, logo ecole, jury). Le bandeau est genere en LaTeX avec TikZ -- le texte s'adapte automatiquement au type de document (these/HDR) et a la langue (francais/anglais). Le texte de la couverture est en Helvetica (sans-serif), comme dans le template officiel.
-2. **`\makeinnertitle`** — Page de titre interieure (style academique)
-3. **`\makebackcover`** — 4eme de couverture officielle IP Paris (logo Doctoral School en haut, resumes bilingues, pied de page IP Paris)
+1. **`\makefrontcover`** — 1ère de couverture officielle IP Paris (bandeau noir avec logo et type de document, logo école, jury). Le bandeau est généré en LaTeX avec TikZ -- le texte s'adapte automatiquement au type de document (thèse/HDR) et à la langue (français/anglais). Le texte de la couverture est en Helvetica (sans-serif), comme dans le template officiel.
+2. **`\makeinnertitle`** — Page de titre intérieure (style académique)
+3. **`\makebackcover`** — 4ème de couverture officielle IP Paris (logo Doctoral School en haut, résumés bilingues, pied de page IP Paris)
 
-Toutes les pages a partir des remerciements portent un pied de page IP Paris : "Institut Polytechnique de Paris / 91120 Palaiseau, France" a gauche, et le sceau IP Paris a droite. Le pied de page se decale avec la marge de reliure lorsque l'option `binding` est activee.
+Toutes les pages à partir des remerciements portent un pied de page IP Paris : "Institut Polytechnique de Paris / 91120 Palaiseau, France" à gauche, et le sceau IP Paris à droite. Le pied de page se décale avec la marge de reliure lorsque l'option `binding` est activée.
 
 Structure type du `main.tex` :
 
 ```latex
 \documentclass[hdr,french]{ipparis-thesis}
 
-% ... metadonnees, jury, resumes ...
+% ... métadonnées, jury, résumés ...
 
 \addbibresource{bibliography.bib}
 \makeglossaries
@@ -580,7 +581,7 @@ Structure type du `main.tex` :
 \listoftables
 
 \begin{foreword}
-  Ce document presente...
+  Ce document présente...
 \end{foreword}
 
 \mainmatter
@@ -607,9 +608,9 @@ Structure type du `main.tex` :
 
 | Environnement | Description |
 |---------------|-------------|
-| `dedication` | Page de dedicace (italique, alignee a droite) |
-| `acknowledgements` | Chapitre de remerciements (titre adapte a la langue) |
-| `foreword` | Avant-propos (titre adapte a la langue) |
+| `dedication` | Page de dédicace (italique, alignée à droite) |
+| `acknowledgements` | Chapitre de remerciements (titre adapté à la langue) |
+| `foreword` | Avant-propos (titre adapté à la langue) |
 
 ---
 
@@ -621,43 +622,43 @@ Structure type du `main.tex` :
 \cotutlogo{partenaire}  % placer partenaire.png dans media/etab/
 ```
 
-Le logo du partenaire apparait a gauche, le logo de l'ecole IP Paris a droite.
+Le logo du partenaire apparaît à gauche, le logo de l'école IP Paris à droite.
 
 ---
 
 ## Personnalisation des couvertures
 
-Les trois pages generees (`\makefrontcover`, `\makeinnertitle`, `\makebackcover`) sont construites a partir de sous-commandes que vous pouvez redefinir individuellement avec `\renewcommand`. Cela permet de modifier une section specifique sans reecrire la page entiere.
+Les trois pages générées (`\makefrontcover`, `\makeinnertitle`, `\makebackcover`) sont construites à partir de sous-commandes que vous pouvez redéfinir individuellement avec `\renewcommand`. Cela permet de modifier une section spécifique sans réécrire la page entière.
 
 ### Sous-commandes disponibles
 
-**1ere de couverture** (`\makefrontcover`) :
+**1ère de couverture** (`\makefrontcover`) :
 
 | Commande | Ce qu'elle affiche |
 |----------|-------------------|
 | `\frontcoverband` | Bandeau noir avec logo IP Paris, NNT et type de document |
-| `\frontcoverlogos` | Logos des ecoles (partenaire co-tutelle + ecole principale) |
-| `\frontcovercontent` | Bloc texte (titre, etablissement, ecole doctorale, auteur) |
+| `\frontcoverlogos` | Logos des écoles (partenaire co-tutelle + école principale) |
+| `\frontcovercontent` | Bloc texte (titre, établissement, école doctorale, auteur) |
 | `\frontcoverjury` | Tableau du jury |
 
-**Page de titre interieure** (`\makeinnertitle`) :
+**Page de titre intérieure** (`\makeinnertitle`) :
 
 | Commande | Ce qu'elle affiche |
 |----------|-------------------|
-| `\innertitlelogos` | Logo ED (gauche) + logos ecole et IP Paris (droite) |
-| `\innertitleheader` | Type de document, specialite, auteur, etablissement |
+| `\innertitlelogos` | Logo ED (gauche) + logos école et IP Paris (droite) |
+| `\innertitleheader` | Type de document, spécialité, auteur, établissement |
 | `\innertitlebody` | Titre entre filets horizontaux |
 | `\innertitlejury` | Date de soutenance et tableau du jury |
 
-**4eme de couverture** (`\makebackcover`) :
+**4ème de couverture** (`\makebackcover`) :
 
 | Commande | Ce qu'elle affiche |
 |----------|-------------------|
-| `\backcoverfrench` | Bloc resume francais (titre, mots-cles, resume) |
-| `\backcoverenglish` | Bloc resume anglais |
+| `\backcoverfrench` | Bloc résumé français (titre, mots-clés, résumé) |
+| `\backcoverenglish` | Bloc résumé anglais |
 | `\backcoverfooter` | Nom et logo IP Paris en bas de page |
 
-### Exemple : jury personnalise sur la page de titre interieure
+### Exemple : jury personnalisé sur la page de titre intérieure
 
 ```latex
 \makeatletter
@@ -677,25 +678,25 @@ Les trois pages generees (`\makefrontcover`, `\makeinnertitle`, `\makebackcover`
 
 ## Installation des logos
 
-**Les fichiers de logos ne sont pas distribues avec ce template** pour des raisons de droit des marques. Vous devez les telecharger vous-meme depuis les sources officielles et les placer dans le dossier `media/`.
+**Les fichiers de logos ne sont pas distribués avec ce template** pour des raisons de droit des marques. Vous devez les télécharger vous-même depuis les sources officielles et les placer dans le dossier `media/`.
 
-Le template affichera un message d'erreur clair a la compilation si un logo requis est manquant.
+Le template affichera un message d'erreur clair à la compilation si un logo requis est manquant.
 
 ### Fichiers requis
 
 | Fichier | Description | Source |
 |---------|-------------|--------|
 | `media/IPPARIS-petit.png` | Sceau IP Paris (noir) | [Charte graphique IP Paris](https://www.ip-paris.fr/sites/default/files/Charte%20Graphique%202025/IP-PARIS_CHARTE-GRAPHIQUE_2025.pdf) |
-| `media/IPPARIS-petit-blanc.png` | Sceau IP Paris (blanc, pour le bandeau) | Meme source |
-| `media/IPPARIS-texte-blanc.png` | Texte "INSTITUT POLYTECHNIQUE DE PARIS" (blanc) | Meme source |
-| `media/etab/<ECOLE>.png` | Logo de votre ecole (TSP, TP, X, ENSTA, ENSAE ou PONTS) | [Modele officiel de couverture](https://www.ip-paris.fr/sites/default/files/documents-utiles/EDIPParis_modele_couverture_these.zip) ou service communication de votre ecole |
-| `media/ed/edipp.png` | Logo ecole doctorale (4eme de couverture) | Meme ZIP du modele de couverture |
+| `media/IPPARIS-petit-blanc.png` | Sceau IP Paris (blanc, pour le bandeau) | Même source |
+| `media/IPPARIS-texte-blanc.png` | Texte "INSTITUT POLYTECHNIQUE DE PARIS" (blanc) | Même source |
+| `media/etab/<ECOLE>.png` | Logo de votre école (TSP, TP, X, ENSTA, ENSAE ou PONTS) | [Modèle officiel de couverture](https://www.ip-paris.fr/sites/default/files/documents-utiles/EDIPParis_modele_couverture_these.zip) ou service communication de votre école |
+| `media/ed/edipp.png` | Logo école doctorale (4ème de couverture) | Même ZIP du modèle de couverture |
 
-### Etape par etape
+### Étape par étape
 
-1. Telecharger le [ZIP du modele officiel de couverture IP Paris](https://www.ip-paris.fr/sites/default/files/documents-utiles/EDIPParis_modele_couverture_these.zip)
+1. Télécharger le [ZIP du modèle officiel de couverture IP Paris](https://www.ip-paris.fr/sites/default/files/documents-utiles/EDIPParis_modele_couverture_these.zip)
 2. Extraire les fichiers de logos et les placer dans les sous-dossiers correspondants de `media/`
-3. Pour les logos IP Paris non inclus dans le ZIP, se referer a la [charte graphique IP Paris 2025](https://www.ip-paris.fr/sites/default/files/Charte%20Graphique%202025/IP-PARIS_CHARTE-GRAPHIQUE_2025.pdf) ou contacter le service communication de votre ecole
+3. Pour les logos IP Paris non inclus dans le ZIP, se référer à la [charte graphique IP Paris 2025](https://www.ip-paris.fr/sites/default/files/Charte%20Graphique%202025/IP-PARIS_CHARTE-GRAPHIQUE_2025.pdf) ou contacter le service communication de votre école
 
 ---
 
@@ -707,82 +708,83 @@ ipparis-thesis/
 ├── main.tex                # Document principal
 ├── bibliography.bib        # Bibliographie
 ├── .latexmkrc              # Configuration latexmk
-├── front/                  # Front matter (dedicace, remerciements, avant-propos)
+├── front/                  # Front matter (dédicace, remerciements, avant-propos)
 ├── chapters/               # Fichiers de chapitres
 ├── appendices/             # Fichiers d'annexes
 ├── figures/                # Vos figures
 ├── tests/                  # Suite de tests
-│   └── run_tests.py        # Tests automatises (34 cas)
-└── media/                      # Logos (a telecharger, voir ci-dessus)
-    ├── IPPARIS-petit.png       # Sceau IP Paris (noir, pour 4eme de couverture)
-    ├── IPPARIS-petit-blanc.png # Sceau IP Paris (blanc, pour bandeau 1ere de couverture)
-    ├── IPPARIS-texte-blanc.png # "INSTITUT POLYTECHNIQUE DE PARIS" (blanc, centre)
-    ├── etab/               # Logos des ecoles
-    │   └── <ECOLE>.png     # Votre ecole (TSP, TP, X, ENSTA, ENSAE ou PONTS)
-    └── ed/                 # Logo ecole doctorale
-        └── edipp.png       # Logo "Doctoral School" IP Paris (4eme de couverture)
+│   └── run_tests.py        # Tests automatisés (34 cas)
+└── media/                      # Logos (à télécharger, voir ci-dessus)
+    ├── IPPARIS-petit.png       # Sceau IP Paris (noir, pour 4ème de couverture)
+    ├── IPPARIS-petit-blanc.png # Sceau IP Paris (blanc, pour bandeau 1ère de couverture)
+    ├── IPPARIS-texte-blanc.png # "INSTITUT POLYTECHNIQUE DE PARIS" (blanc, centré)
+    ├── etab/               # Logos des écoles
+    │   └── <ECOLE>.png     # Votre école (TSP, TP, X, ENSTA, ENSAE ou PONTS)
+    └── ed/                 # Logo école doctorale
+        └── edipp.png       # Logo "Doctoral School" IP Paris (4ème de couverture)
 ```
 
 ---
 
 ## Tests
 
-La suite de tests compile le template avec toutes les combinaisons d'options et verifie que le bon texte se retrouve dans le PDF.
+La suite de tests compile le template avec toutes les combinaisons d'options et vérifie que le bon texte se retrouve dans le PDF.
 
 **34 tests** couvrant :
 
-| Tests | Ce qui est verifie |
+| Tests | Ce qui est vérifié |
 |-------|--------------------|
-| 20 | Compilation pour chaque ecole (TSP, TP, X, ENSTA, ENSAE) x (phd, hdr) x (english, french) |
-| 2 | Isolation des textes HDR/these (pas de contamination croisee entre les modes) |
-| 2 | Le titre de l'avant-propos s'adapte a la langue (Foreword / Avant-propos) |
-| 2 | Le titre des remerciements s'adapte a la langue |
-| 1 | Toutes les metadonnees presentes dans le PDF (auteur, titre, labo, NNT, jury, mots-cles) |
+| 20 | Compilation pour chaque école (TSP, TP, X, ENSTA, ENSAE) x (phd, hdr) x (english, french) |
+| 2 | Isolation des textes HDR/thèse (pas de contamination croisée entre les modes) |
+| 2 | Le titre de l'avant-propos s'adapte à la langue (Foreword / Avant-propos) |
+| 2 | Le titre des remerciements s'adapte à la langue |
+| 1 | Toutes les métadonnées présentes dans le PDF (auteur, titre, labo, NNT, jury, mots-clés) |
 | 1 | L'option cotutelle compile |
-| 4 | Options personnalisees de packages (bibstyle, couleurs hyperref, colorlinks, combinees) |
+| 4 | Options personnalisées de packages (bibstyle, couleurs hyperref, colorlinks, combinées) |
 | 2 | Surcharge de sous-commandes de couverture avec \renewcommand |
 
 Lancer les tests :
 
 ```bash
 python3 tests/run_tests.py          # tous les tests
-python3 tests/run_tests.py -v       # mode verbose (affiche les erreurs du log en cas d'echec)
+python3 tests/run_tests.py -v       # mode verbose (affiche les erreurs du log en cas d'échec)
 python3 tests/run_tests.py -k hdr   # filtrer les tests par nom
-python3 tests/run_tests.py -k X     # uniquement les tests Ecole polytechnique
+python3 tests/run_tests.py -k X     # uniquement les tests École polytechnique
 ```
 
-Prerequis pour les tests :
+Prérequis pour les tests :
 - Python 3.9+
 - pdflatex (TeX Live / MiKTeX)
-- pdftotext (optionnel, pour les verifications de contenu — `brew install poppler` sur macOS)
+- pdftotext (optionnel, pour les vérifications de contenu — `brew install poppler` sur macOS)
 
 ---
 
-## Prerequis
+## Prérequis
 
 - TeX Live 2022+ ou MiKTeX
-- XeLaTeX (recommande, pour Futura Book sur le bandeau de couverture) ou pdflatex (utilise TeX Gyre Heros en remplacement)
+- XeLaTeX (recommandé, pour Futura Book sur le bandeau de couverture) ou pdflatex (utilise TeX Gyre Heros en remplacement)
 - biber (pour la bibliographie)
-- Police Futura (incluse avec macOS ; les utilisateurs Linux/Windows doivent l'installer separement)
+- Police Futura (incluse avec macOS ; les utilisateurs Linux/Windows doivent l'installer séparément)
 - Packages : tous standards, inclus dans TeX Live full
 
 ---
 
-## Conformite a la charte graphique
+## Conformité à la charte graphique
 
-La 1ere de couverture est generee entierement en LaTeX (pas d'image statique pour le bandeau). Elle respecte la charte graphique IP Paris 2025 :
+La 1ère de couverture est générée entièrement en LaTeX (pas d'image statique pour le bandeau). Elle respecte la charte graphique IP Paris 2025 :
 
 - **Logo et nom de l'institution** : le sceau IP Paris et le texte "INSTITUT POLYTECHNIQUE DE PARIS" sont extraits directement des fichiers logo institutionnels -- typographie exacte, proportions exactes, aucune approximation
-- **Texte du bandeau** : Futura pour le type de document ("These de doctorat" / "Habilitation a diriger des recherches"). Futura Medium est incluse avec macOS. Les utilisateurs Linux/Windows doivent installer Futura separement. Avec pdflatex, le template utilise TeX Gyre Heros en remplacement.
+- **Texte du bandeau** : Futura pour le type de document ("Thèse de doctorat" / "Habilitation à diriger des recherches"). Futura Medium est incluse avec macOS. Les utilisateurs Linux/Windows doivent installer Futura séparément. Avec pdflatex, le template utilise TeX Gyre Heros en remplacement.
 - **Couleurs** : palette officielle IP Paris (bleu `#1B2A4A`, rouge `#C1272D`, orange `#E8601C`, gris `#6D6E71`)
-- **Type de document** : le texte du bandeau est genere dynamiquement selon les options de la classe -- pas besoin de changer d'image
+- **Type de document** : le texte du bandeau est généré dynamiquement selon les options de la classe -- pas besoin de changer d'image
 
 ---
 
-## Credits
+## Crédits
 
-- Mise en page des couvertures basee sur le [modele officiel IP Paris pour les couvertures de these](https://www.ip-paris.fr/education/doctorat/ecole-doctorale-ip-paris) par Guillaume Brigot et Aurelien Arnoux (Ecole polytechnique) ([sources LaTeX](https://www.ip-paris.fr/sites/default/files/documents-utiles/EDIPParis_modele_couverture_these.zip))
-- Typographie et usage du logo bases sur la [charte graphique IP Paris 2025](https://www.ip-paris.fr/sites/default/files/Charte%20Graphique%202025/IP-PARIS_CHARTE-GRAPHIQUE_2025.pdf)
+- Mise en page des couvertures basée sur le [modèle officiel IP Paris pour les couvertures de thèse](https://www.ip-paris.fr/education/doctorat/ecole-doctorale-ip-paris) par Guillaume Brigot et Aurélien Arnoux (École polytechnique) ([sources LaTeX](https://www.ip-paris.fr/sites/default/files/documents-utiles/EDIPParis_modele_couverture_these.zip))
+- Typographie et usage du logo basés sur la [charte graphique IP Paris 2025](https://www.ip-paris.fr/sites/default/files/Charte%20Graphique%202025/IP-PARIS_CHARTE-GRAPHIQUE_2025.pdf)
+- Merci à [Cédric Ware](https://perso.telecom-paristech.fr/ware/index.html.fr) (Télécom Paris) pour ses retours sur les premières versions du template. Ses commentaires ont permis d'améliorer le système d'options et la personnalisation des couvertures.
 - Template complet par Antoine Lavignotte (2026)
 
 ## Licence
