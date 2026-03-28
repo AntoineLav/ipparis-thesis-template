@@ -1,4 +1,4 @@
-# ipparis-thesis v0.4
+# ipparis-thesis v0.5
 
 **LaTeX template for thesis and HDR manuscripts at Institut Polytechnique de Paris.**
 
@@ -57,8 +57,21 @@ The template also compiles with pdflatex, but the cover band will use TeX Gyre H
 | `french` | French document |
 | `cotutelle` | Joint supervision with partner institution |
 | `binding` | Add 10mm binding offset for printed copies |
+| `bibstyle=...` | Bibliography style (default: `ieee`) |
+| `bibsorting=...` | Bibliography sorting (default: `nyt`) |
+| `linkcolor=...` | Internal link color (default: `NavyBlue`) |
+| `citecolor=...` | Citation link color (default: `ForestGreen`) |
+| `urlcolor=...` | URL link color (default: `BrickRed`) |
+| `colorlinks=false` | Disable colored links (use boxes instead) |
 
-Options can be combined: `\documentclass[hdr,french,cotutelle,binding]{ipparis-thesis}`
+Options can be combined: `\documentclass[hdr,french,bibstyle=authoryear,linkcolor=black]{ipparis-thesis}`
+
+For packages not covered by the options above (e.g. xcolor, geometry), use `\PassOptionsToPackage` before `\documentclass`:
+
+```latex
+\PassOptionsToPackage{table}{xcolor}
+\documentclass[phd]{ipparis-thesis}
+```
 
 ---
 
@@ -252,7 +265,7 @@ ipparis-thesis/
 ├── appendices/             # Appendix files
 ├── figures/                # Your figures
 ├── tests/                  # Test suite
-│   └── run_tests.py        # Automated tests (28 cases)
+│   └── run_tests.py        # Automated tests (32 cases)
 └── media/                  # Logos (download separately, see above)
     ├── IPPARIS-petit.png       # IP Paris seal (black, for back cover)
     ├── IPPARIS-petit-blanc.png # IP Paris seal (white, for front cover band)
@@ -269,7 +282,7 @@ ipparis-thesis/
 
 The test suite compiles the template with every combination of options and checks that the right text ends up in the PDF.
 
-**28 tests** covering:
+**32 tests** covering:
 
 | Tests | What is verified |
 |-------|-----------------|
@@ -279,6 +292,7 @@ The test suite compiles the template with every combination of options and check
 | 2 | Acknowledgements title adapts to language |
 | 1 | All metadata present in PDF (author, title, lab, NNT, jury, keywords) |
 | 1 | Cotutelle option compiles |
+| 4 | Custom package options (bibstyle, hyperref colors, colorlinks, combined) |
 
 Run the tests:
 
@@ -330,7 +344,7 @@ CC BY 4.0
 ---
 ---
 
-# ipparis-thesis v0.4 (Francais)
+# ipparis-thesis v0.5 (Francais)
 
 **Template LaTeX pour les manuscrits de these et d'HDR a l'Institut Polytechnique de Paris.**
 
@@ -389,8 +403,21 @@ Le template compile aussi avec pdflatex, mais le bandeau utilisera TeX Gyre Hero
 | `french` | Document en francais |
 | `cotutelle` | Co-tutelle avec un etablissement partenaire |
 | `binding` | Ajoute 10mm de marge de reliure pour l'impression |
+| `bibstyle=...` | Style bibliographique (defaut : `ieee`) |
+| `bibsorting=...` | Tri bibliographique (defaut : `nyt`) |
+| `linkcolor=...` | Couleur des liens internes (defaut : `NavyBlue`) |
+| `citecolor=...` | Couleur des liens de citation (defaut : `ForestGreen`) |
+| `urlcolor=...` | Couleur des liens URL (defaut : `BrickRed`) |
+| `colorlinks=false` | Desactive les liens colores (utilise des cadres) |
 
-Les options se combinent : `\documentclass[hdr,french,cotutelle,binding]{ipparis-thesis}`
+Les options se combinent : `\documentclass[hdr,french,bibstyle=authoryear,linkcolor=black]{ipparis-thesis}`
+
+Pour les packages non couverts par les options ci-dessus (ex. xcolor, geometry), utiliser `\PassOptionsToPackage` avant `\documentclass` :
+
+```latex
+\PassOptionsToPackage{table}{xcolor}
+\documentclass[phd,french]{ipparis-thesis}
+```
 
 ---
 
@@ -584,7 +611,7 @@ ipparis-thesis/
 ├── appendices/             # Fichiers d'annexes
 ├── figures/                # Vos figures
 ├── tests/                  # Suite de tests
-│   └── run_tests.py        # Tests automatises (28 cas)
+│   └── run_tests.py        # Tests automatises (32 cas)
 └── media/                      # Logos (a telecharger, voir ci-dessus)
     ├── IPPARIS-petit.png       # Sceau IP Paris (noir, pour 4eme de couverture)
     ├── IPPARIS-petit-blanc.png # Sceau IP Paris (blanc, pour bandeau 1ere de couverture)
@@ -601,7 +628,7 @@ ipparis-thesis/
 
 La suite de tests compile le template avec toutes les combinaisons d'options et verifie que le bon texte se retrouve dans le PDF.
 
-**28 tests** couvrant :
+**32 tests** couvrant :
 
 | Tests | Ce qui est verifie |
 |-------|--------------------|
@@ -611,6 +638,7 @@ La suite de tests compile le template avec toutes les combinaisons d'options et 
 | 2 | Le titre des remerciements s'adapte a la langue |
 | 1 | Toutes les metadonnees presentes dans le PDF (auteur, titre, labo, NNT, jury, mots-cles) |
 | 1 | L'option cotutelle compile |
+| 4 | Options personnalisees de packages (bibstyle, couleurs hyperref, colorlinks, combinees) |
 
 Lancer les tests :
 

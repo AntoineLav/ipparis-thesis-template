@@ -356,6 +356,38 @@ def build_test_cases() -> list[TestCase]:
         expect_in_pdf=["Test Author"],
     ))
 
+    # 8. Custom bibstyle option
+    tests.append(TestCase(
+        name="custom_bibstyle",
+        options="phd,bibstyle=numeric",
+        school="TSP",
+        expect_in_pdf=["Test Author"],
+    ))
+
+    # 9. Custom hyperref colors
+    tests.append(TestCase(
+        name="custom_hyperref_colors",
+        options="hdr,linkcolor=red,citecolor=blue,urlcolor=black",
+        school="TP",
+        expect_in_pdf=["Test Author"],
+    ))
+
+    # 10. colorlinks=false option
+    tests.append(TestCase(
+        name="colorlinks_false",
+        options="phd,colorlinks=false",
+        school="X",
+        expect_in_pdf=["Test Author"],
+    ))
+
+    # 11. Multiple custom options combined
+    tests.append(TestCase(
+        name="combined_custom_options",
+        options="hdr,french,bibstyle=alphabetic,bibsorting=nty,linkcolor=black",
+        school="ENSAE",
+        expect_in_pdf=["Habilitation", "Test Author"],
+    ))
+
     return tests
 
 

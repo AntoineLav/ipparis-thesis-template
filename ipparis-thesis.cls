@@ -13,24 +13,39 @@
 %%
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{ipparis-thesis}[2026/03/27 v0.4 IP Paris Thesis/HDR Template]
+\ProvidesClass{ipparis-thesis}[2026/03/28 v0.5 IP Paris Thesis/HDR Template]
 
 %% ── Options ──────────────────────────────────────────────────────
 
+\RequirePackage{kvoptions}
+\SetupKeyvalOptions{family=ipparis,prefix=ipparis@}
+
+% Document type and language (boolean flags)
 \newif\if@hdr\@hdrfalse
 \newif\if@phd\@phdtrue
 \newif\if@french\@frenchfalse
 \newif\if@cotutelle\@cotutellefalse
 \newif\if@binding\@bindingfalse
 
-\DeclareOption{hdr}{\@hdrtrue\@phdfalse}
-\DeclareOption{phd}{\@phdtrue\@hdrfalse}
-\DeclareOption{english}{\@frenchfalse}
-\DeclareOption{french}{\@frenchtrue}
-\DeclareOption{cotutelle}{\@cotutelletrue}
-\DeclareOption{binding}{\@bindingtrue}
-\DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
-\ProcessOptions\relax
+\DeclareVoidOption{hdr}{\@hdrtrue\@phdfalse}
+\DeclareVoidOption{phd}{\@phdtrue\@hdrfalse}
+\DeclareVoidOption{english}{\@frenchfalse}
+\DeclareVoidOption{french}{\@frenchtrue}
+\DeclareVoidOption{cotutelle}{\@cotutelletrue}
+\DeclareVoidOption{binding}{\@bindingtrue}
+
+% Customizable package options (key=value)
+\DeclareStringOption[ieee]{bibstyle}
+\DeclareStringOption[nyt]{bibsorting}
+\DeclareStringOption[NavyBlue]{linkcolor}
+\DeclareStringOption[ForestGreen]{citecolor}
+\DeclareStringOption[BrickRed]{urlcolor}
+\DeclareBoolOption[true]{colorlinks}
+
+% Unknown options go to book class
+\DeclareDefaultOption{\PassOptionsToClass{\CurrentOption}{book}}
+
+\ProcessKeyvalOptions*\relax
 
 %% ── Base class ───────────────────────────────────────────────────
 
@@ -100,17 +115,21 @@
 % Bibliography
 \RequirePackage[
   backend=biber,
-  style=ieee,
-  sorting=nyt,
+  style=\ipparis@bibstyle,
+  sorting=\ipparis@bibsorting,
   maxbibnames=99,
 ]{biblatex}
 
 % Hyperlinks (load last among these)
+\ifipparis@colorlinks
+  \PassOptionsToPackage{colorlinks=true}{hyperref}%
+\else
+  \PassOptionsToPackage{colorlinks=false}{hyperref}%
+\fi
 \RequirePackage[
-  colorlinks=true,
-  linkcolor=NavyBlue,
-  citecolor=ForestGreen,
-  urlcolor=BrickRed,
+  linkcolor=\ipparis@linkcolor,
+  citecolor=\ipparis@citecolor,
+  urlcolor=\ipparis@urlcolor,
   pdfusetitle,
 ]{hyperref}
 \RequirePackage{bookmark}
