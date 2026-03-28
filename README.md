@@ -1,4 +1,4 @@
-# ipparis-thesis v0.5
+# ipparis-thesis v0.6
 
 **LaTeX template for thesis and HDR manuscripts at Institut Polytechnique de Paris.**
 
@@ -228,6 +228,56 @@ The partner institution logo appears on the left, the IP Paris school logo on th
 
 ---
 
+## Customizing covers
+
+The three generated pages (`\makefrontcover`, `\makeinnertitle`, `\makebackcover`) are built from sub-commands that you can override individually with `\renewcommand`. This lets you tweak a specific section without rewriting the entire page.
+
+### Available sub-commands
+
+**Front cover** (`\makefrontcover`):
+
+| Command | What it renders |
+|---------|----------------|
+| `\frontcoverband` | Black band with IP Paris logo, NNT, and document type |
+| `\frontcoverlogos` | School logos (cotutelle partner + main school) |
+| `\frontcovercontent` | Text block (title, institution, doctoral school, author) |
+| `\frontcoverjury` | Jury table |
+
+**Inner title page** (`\makeinnertitle`):
+
+| Command | What it renders |
+|---------|----------------|
+| `\innertitlelogos` | ED logo (left) + school and IP Paris logos (right) |
+| `\innertitleheader` | Document type, specialty, author, institution |
+| `\innertitlebody` | Title between horizontal rules |
+| `\innertitlejury` | Defense date and jury table |
+
+**Back cover** (`\makebackcover`):
+
+| Command | What it renders |
+|---------|----------------|
+| `\backcoverfrench` | French abstract block (title, keywords, abstract) |
+| `\backcoverenglish` | English abstract block |
+| `\backcoverfooter` | IP Paris name and logo at the bottom |
+
+### Example: custom jury on inner title page
+
+```latex
+\makeatletter
+\renewcommand{\innertitlejury}{%
+  {\small
+    Defended on \@defensedate, before the jury:
+  }
+  \vspace{0.5cm}
+  \begin{tabular}{@{} l l}
+    \@jurylist
+  \end{tabular}%
+}
+\makeatother
+```
+
+---
+
 ## Logo setup
 
 **Logo files are not distributed with this template** due to trademark restrictions. You must download them yourself from the official sources and place them in the `media/` directory.
@@ -265,7 +315,7 @@ ipparis-thesis/
 ├── appendices/             # Appendix files
 ├── figures/                # Your figures
 ├── tests/                  # Test suite
-│   └── run_tests.py        # Automated tests (32 cases)
+│   └── run_tests.py        # Automated tests (34 cases)
 └── media/                  # Logos (download separately, see above)
     ├── IPPARIS-petit.png       # IP Paris seal (black, for back cover)
     ├── IPPARIS-petit-blanc.png # IP Paris seal (white, for front cover band)
@@ -282,7 +332,7 @@ ipparis-thesis/
 
 The test suite compiles the template with every combination of options and checks that the right text ends up in the PDF.
 
-**32 tests** covering:
+**34 tests** covering:
 
 | Tests | What is verified |
 |-------|-----------------|
@@ -293,6 +343,7 @@ The test suite compiles the template with every combination of options and check
 | 1 | All metadata present in PDF (author, title, lab, NNT, jury, keywords) |
 | 1 | Cotutelle option compiles |
 | 4 | Custom package options (bibstyle, hyperref colors, colorlinks, combined) |
+| 2 | Cover sub-command override with \renewcommand |
 
 Run the tests:
 
@@ -344,7 +395,7 @@ CC BY 4.0
 ---
 ---
 
-# ipparis-thesis v0.5 (Francais)
+# ipparis-thesis v0.6 (Francais)
 
 **Template LaTeX pour les manuscrits de these et d'HDR a l'Institut Polytechnique de Paris.**
 
@@ -574,6 +625,56 @@ Le logo du partenaire apparait a gauche, le logo de l'ecole IP Paris a droite.
 
 ---
 
+## Personnalisation des couvertures
+
+Les trois pages generees (`\makefrontcover`, `\makeinnertitle`, `\makebackcover`) sont construites a partir de sous-commandes que vous pouvez redefinir individuellement avec `\renewcommand`. Cela permet de modifier une section specifique sans reecrire la page entiere.
+
+### Sous-commandes disponibles
+
+**1ere de couverture** (`\makefrontcover`) :
+
+| Commande | Ce qu'elle affiche |
+|----------|-------------------|
+| `\frontcoverband` | Bandeau noir avec logo IP Paris, NNT et type de document |
+| `\frontcoverlogos` | Logos des ecoles (partenaire co-tutelle + ecole principale) |
+| `\frontcovercontent` | Bloc texte (titre, etablissement, ecole doctorale, auteur) |
+| `\frontcoverjury` | Tableau du jury |
+
+**Page de titre interieure** (`\makeinnertitle`) :
+
+| Commande | Ce qu'elle affiche |
+|----------|-------------------|
+| `\innertitlelogos` | Logo ED (gauche) + logos ecole et IP Paris (droite) |
+| `\innertitleheader` | Type de document, specialite, auteur, etablissement |
+| `\innertitlebody` | Titre entre filets horizontaux |
+| `\innertitlejury` | Date de soutenance et tableau du jury |
+
+**4eme de couverture** (`\makebackcover`) :
+
+| Commande | Ce qu'elle affiche |
+|----------|-------------------|
+| `\backcoverfrench` | Bloc resume francais (titre, mots-cles, resume) |
+| `\backcoverenglish` | Bloc resume anglais |
+| `\backcoverfooter` | Nom et logo IP Paris en bas de page |
+
+### Exemple : jury personnalise sur la page de titre interieure
+
+```latex
+\makeatletter
+\renewcommand{\innertitlejury}{%
+  {\small
+    soutenue le \@defensedate, devant le jury :
+  }
+  \vspace{0.5cm}
+  \begin{tabular}{@{} l l}
+    \@jurylist
+  \end{tabular}%
+}
+\makeatother
+```
+
+---
+
 ## Installation des logos
 
 **Les fichiers de logos ne sont pas distribues avec ce template** pour des raisons de droit des marques. Vous devez les telecharger vous-meme depuis les sources officielles et les placer dans le dossier `media/`.
@@ -611,7 +712,7 @@ ipparis-thesis/
 ├── appendices/             # Fichiers d'annexes
 ├── figures/                # Vos figures
 ├── tests/                  # Suite de tests
-│   └── run_tests.py        # Tests automatises (32 cas)
+│   └── run_tests.py        # Tests automatises (34 cas)
 └── media/                      # Logos (a telecharger, voir ci-dessus)
     ├── IPPARIS-petit.png       # Sceau IP Paris (noir, pour 4eme de couverture)
     ├── IPPARIS-petit-blanc.png # Sceau IP Paris (blanc, pour bandeau 1ere de couverture)
@@ -628,7 +729,7 @@ ipparis-thesis/
 
 La suite de tests compile le template avec toutes les combinaisons d'options et verifie que le bon texte se retrouve dans le PDF.
 
-**32 tests** couvrant :
+**34 tests** couvrant :
 
 | Tests | Ce qui est verifie |
 |-------|--------------------|
@@ -639,6 +740,7 @@ La suite de tests compile le template avec toutes les combinaisons d'options et 
 | 1 | Toutes les metadonnees presentes dans le PDF (auteur, titre, labo, NNT, jury, mots-cles) |
 | 1 | L'option cotutelle compile |
 | 4 | Options personnalisees de packages (bibstyle, couleurs hyperref, colorlinks, combinees) |
+| 2 | Surcharge de sous-commandes de couverture avec \renewcommand |
 
 Lancer les tests :
 

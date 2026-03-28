@@ -13,7 +13,7 @@
 %%
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{ipparis-thesis}[2026/03/28 v0.5 IP Paris Thesis/HDR Template]
+\ProvidesClass{ipparis-thesis}[2026/03/28 v0.6 IP Paris Thesis/HDR Template]
 
 %% ── Options ──────────────────────────────────────────────────────
 
@@ -331,35 +331,22 @@
   {\Huge}
 
 %% ── Front cover ──────────────────────────────────────────────────
+%% Each sub-command can be individually overridden with \renewcommand.
 
-\newcommand{\makefrontcover}{%
-  \clearpage
-  \thispagestyle{empty}
-  \newgeometry{left=16mm,right=16mm,top=30mm,bottom=30mm}
-
-  %% Layout from official IP Paris template (1ere.tex)
-  %% Only variable names changed to use class commands
-
-  \color{black} \hfill \vfill \tiny \@ednum
-
-  % Black band — generated in LaTeX (adapts to phd/hdr and language)
+% Black band with IP Paris logo, NNT, and document type
+\newcommand{\frontcoverband}{%
   \begin{tikzpicture}[remember picture,overlay]
-    % Black rectangle (full page height, left side)
     \fill[black] (current page.north west) rectangle
       ([xshift=57mm]current page.south west);
-    % IP Paris seal (white version on black band)
     \node[inner sep=0pt]
       at ([xshift=28mm,yshift=-20mm]current page.north west)
       {\includegraphics[width=21mm]{media/IPPARIS-petit-blanc.png}};
-    % "INSTITUT POLYTECHNIQUE DE PARIS" (from official logo, centered)
     \node[anchor=north,inner sep=0pt]
       at ([xshift=28mm,yshift=-35mm]current page.north west)
       {\includegraphics[width=40mm]{media/IPPARIS-texte-blanc.png}};
-    % NNT (rotated, reads bottom to top)
     \node[anchor=south west,inner sep=0pt]
       at ([xshift=5mm,yshift=-115mm]current page.north west)
       {\rotatebox{90}{\color{white}\bfseries\Large NNT : \@nnt}};
-    % Document type (rotated, lower part of band)
     \node[anchor=south west,inner sep=0pt]
       at ([xshift=10mm,yshift=-290mm]current page.north west)
       {\rotatebox{90}{\color{white}%
@@ -372,9 +359,11 @@
           \if@french Th\`ese de doctorat%
           \else Doctoral Thesis\fi
         \fi}};
-  \end{tikzpicture}
+  \end{tikzpicture}%
+}
 
-  % School logo(s)
+% School logos on front cover (cotutelle partner + main school)
+\newcommand{\frontcoverlogos}{%
   \if@cotutelle
     \begin{textblock}{1}(6.1,0.1)
       \textblockcolour{white}
@@ -384,9 +373,11 @@
   \begin{textblock}{1}(12.25,0.1)
     \textblockcolour{white}
     \includegraphics[scale=1]{media/etab/\@instlogo.png}
-  \end{textblock}
+  \end{textblock}%
+}
 
-  % Main content block
+% Front cover text content (title, institution, doctoral school, author)
+\newcommand{\frontcovercontent}{%
   \begin{textblock}{10}(5.7,3)
     \textblockcolour{white}
     \sffamily
@@ -425,116 +416,128 @@
     \end{flushright}
 
     \color{black}
-    \begin{flushleft}
-      \small \if@french Composition du Jury\else Jury composition\fi{} :
-    \end{flushleft}
+    \frontcoverjury
+  \end{textblock}%
+}
 
-    \small
-    %% Jury table — exact layout from official template
-    \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{##1}}
-    \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{##1}}
+% Jury table on front cover
+\newcommand{\frontcoverjury}{%
+  \begin{flushleft}
+    \small \if@french Composition du Jury\else Jury composition\fi{} :
+  \end{flushleft}
+  \small
+  \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{##1}}
+  \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{##1}}
+  \begin{flushleft}
+  \begin{tabular}{@{} L{8cm} R{3.5cm}}
+    \@jurylist
+  \end{tabular}
+  \end{flushleft}%
+}
 
-    \begin{flushleft}
-    \begin{tabular}{@{} L{8cm} R{3.5cm}}
-      \@jurylist
-    \end{tabular}
-    \end{flushleft}
-  \end{textblock}
-
+\newcommand{\makefrontcover}{%
+  \clearpage
+  \thispagestyle{empty}
+  \newgeometry{left=16mm,right=16mm,top=30mm,bottom=30mm}
+  \color{black} \hfill \vfill \tiny \@ednum
+  \frontcoverband
+  \frontcoverlogos
+  \frontcovercontent
   \null\newpage
   \restoregeometry
   \normalsize\rmfamily
 }
 
 %% ── Inner title page (like Petetin/Minerva style) ────────────────
+%% Each sub-command can be individually overridden with \renewcommand.
+
+% Logos on inner title page (ED logo left, school + IP Paris right)
+\newcommand{\innertitlelogos}{%
+  \begin{minipage}{0.45\textwidth}
+    \flushleft
+    \ifx\@edlogo\empty\else
+      \includegraphics[height=20mm]{media/ed/\@edlogo}
+    \fi
+  \end{minipage}%
+  \hfill
+  \begin{minipage}{0.45\textwidth}
+    \flushright
+    \includegraphics[height=15mm]{media/etab/\@instlogo.png}\\[5mm]
+    \includegraphics[height=12mm]{media/IPPARIS-petit.png}
+  \end{minipage}%
+}
+
+% Header block: document type, specialty, author, institution
+\newcommand{\innertitleheader}{%
+  {\Large\scshape
+    \if@hdr
+      \if@french Habilitation à diriger des recherches\else Habilitation to Supervise Research\fi
+    \else
+      \if@french Thèse de doctorat\else Doctoral Thesis\fi
+    \fi
+  }
+
+  \vspace{0.5cm}
+
+  \if@french Discipline\else Specialty\fi : \@specialty
+
+  \vspace{1.5cm}
+  \if@french présentée par\else presented by\fi\\[0.5cm]
+  {\LARGE\bfseries \@authorname}
+
+  \vspace{0.3cm}
+  {\small
+    \@institution\\
+    Laboratoire \@lab
+  }%
+}
+
+% Title block with horizontal rules
+\newcommand{\innertitlebody}{%
+  \rule{\textwidth}{0.5pt}\\[0.5cm]
+  {\Large\bfseries \@titleen}\\[0.5cm]
+  \rule{\textwidth}{0.5pt}%
+}
+
+% Jury block on inner title page
+\newcommand{\innertitlejury}{%
+  {\small
+    \if@french
+      soutenue le \@defensedate\\
+      devant le jury composé de :
+    \else
+      defended on \@defensedate\\
+      before the jury composed of:
+    \fi
+  }
+
+  \vspace{1cm}
+  \begin{tabular}{@{} l l l}
+    \@jurylist
+  \end{tabular}%
+}
 
 \newcommand{\makeinnertitle}{%
   \clearpage
   \thispagestyle{empty}
   \begin{center}
     \vspace*{1cm}
-
-    % Logos
-    \begin{minipage}{0.45\textwidth}
-      \flushleft
-      \ifx\@edlogo\empty\else
-        \includegraphics[height=20mm]{media/ed/\@edlogo}
-      \fi
-    \end{minipage}%
-    \hfill
-    \begin{minipage}{0.45\textwidth}
-      \flushright
-      \includegraphics[height=15mm]{media/etab/\@instlogo.png}\\[5mm]
-      \includegraphics[height=12mm]{media/IPPARIS-petit.png}
-    \end{minipage}
-
+    \innertitlelogos
     \vspace{2cm}
-
-    {\Large\scshape
-      \if@hdr
-        \if@french Habilitation à diriger des recherches\else Habilitation to Supervise Research\fi
-      \else
-        \if@french Thèse de doctorat\else Doctoral Thesis\fi
-      \fi
-    }
-
-    \vspace{0.5cm}
-
-    \if@french Discipline\else Specialty\fi : \@specialty
-
+    \innertitleheader
     \vspace{1.5cm}
-    \if@french présentée par\else presented by\fi\\[0.5cm]
-    {\LARGE\bfseries \@authorname}
-
-    \vspace{0.3cm}
-    {\small
-      \@institution\\
-      Laboratoire \@lab
-    }
-
-    \vspace{1.5cm}
-    \rule{\textwidth}{0.5pt}\\[0.5cm]
-    {\Large\bfseries \@titleen}\\[0.5cm]
-    \rule{\textwidth}{0.5pt}
-
+    \innertitlebody
     \vspace{2cm}
-    {\small
-      \if@french
-        soutenue le \@defensedate\\
-        devant le jury composé de :
-      \else
-        defended on \@defensedate\\
-        before the jury composed of:
-      \fi
-    }
-
-    \vspace{1cm}
-    \begin{tabular}{@{} l l l}
-      \@jurylist
-    \end{tabular}
-
+    \innertitlejury
   \end{center}
   \clearpage
 }
 
 %% ── Back cover ───────────────────────────────────────────────────
+%% Each sub-command can be individually overridden with \renewcommand.
 
-\newcommand{\makebackcover}{%
-  \cleardoublepage
-  \thispagestyle{empty}
-  \newgeometry{left=16mm,right=16mm,top=30mm,bottom=30mm}
-
-  % Reset textblock background color (avoids black bleed from front cover)
-  \textblockcolour{white}
-
-  % ED logo (only if \edlogo was set)
-  \ifx\@edlogo\empty\else
-    \begin{textblock*}{61mm}(16mm,3mm)
-      \noindent\includegraphics[height=24mm]{media/ed/\@edlogo}
-    \end{textblock*}
-  \fi
-
-  % French block (always first, per IP Paris requirements)
+% French abstract block (title, keywords, abstract in two columns)
+\newcommand{\backcoverfrench}{%
   \begin{center}
   \fcolorbox{black}{white}{\parbox{0.95\textwidth}{
     {\bf Titre :} \@titlefr
@@ -548,11 +551,11 @@
     \@abstractfr
     \end{multicols}
   }}
-  \end{center}
+  \end{center}%
+}
 
-  \vspace*{0mm}
-
-  % English block (always second)
+% English abstract block (title, keywords, abstract in two columns)
+\newcommand{\backcoverenglish}{%
   \begin{center}
   \fcolorbox{black}{white}{\parbox{0.95\textwidth}{
     {\bf Title:} \@titleen
@@ -566,9 +569,11 @@
     \@abstracten
     \end{multicols}
   }}
-  \end{center}
+  \end{center}%
+}
 
-  % Footer
+% Back cover footer (IP Paris name + logo)
+\newcommand{\backcoverfooter}{%
   \begin{textblock*}{140mm}(16mm,274mm)
     \colorbox{white}{\parbox{138mm}{%
       \color{black}
@@ -576,11 +581,25 @@
       \noindent 91120 Palaiseau, France%
     }}
   \end{textblock*}
-
   \begin{textblock*}{22mm}(170mm,270mm)
     \colorbox{white}{\includegraphics[width=20mm]{media/IPPARIS-petit}}
-  \end{textblock*}
+  \end{textblock*}%
+}
 
+\newcommand{\makebackcover}{%
+  \cleardoublepage
+  \thispagestyle{empty}
+  \newgeometry{left=16mm,right=16mm,top=30mm,bottom=30mm}
+  \textblockcolour{white}
+  \ifx\@edlogo\empty\else
+    \begin{textblock*}{61mm}(16mm,3mm)
+      \noindent\includegraphics[height=24mm]{media/ed/\@edlogo}
+    \end{textblock*}
+  \fi
+  \backcoverfrench
+  \vspace*{0mm}
+  \backcoverenglish
+  \backcoverfooter
   \restoregeometry
 }
 

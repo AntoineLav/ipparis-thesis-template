@@ -388,6 +388,38 @@ def build_test_cases() -> list[TestCase]:
         expect_in_pdf=["Habilitation", "Test Author"],
     ))
 
+    # 12. Override inner title jury sub-command
+    tests.append(TestCase(
+        name="override_innertitle_jury",
+        options="phd",
+        school="TSP",
+        extra_preamble=r"""
+\makeatletter
+\renewcommand{\innertitlejury}{%
+  {\small Custom jury section for testing.}%
+}
+\makeatother
+""",
+        expect_in_pdf=["Custom jury section"],
+    ))
+
+    # 13. Override back cover French abstract sub-command
+    tests.append(TestCase(
+        name="override_backcover_french",
+        options="hdr,french",
+        school="TP",
+        extra_preamble=r"""
+\makeatletter
+\renewcommand{\backcoverfrench}{%
+  \begin{center}
+  \fbox{\parbox{0.9\textwidth}{Custom French abstract block.}}
+  \end{center}%
+}
+\makeatother
+""",
+        expect_in_pdf=["Custom French abstract block"],
+    ))
+
     return tests
 
 
